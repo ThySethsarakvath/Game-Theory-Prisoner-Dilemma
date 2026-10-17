@@ -1,0 +1,95 @@
+
+[96m+--------------------------------------------------------------------------+[0m
+[96m|               P R I S O N E R ' S   D I L E M M A  /  TP1                |[0m
+[96m+--------------------------------------------------------------------------+[0m
+[96m
+            ||   ||   ||   ||   ||   ||   ||
+            ||  (o)   ||       ||   (o)  ||
+            ||  /|\   ||  VS   ||   /|\  ||
+            ||  / \   ||       ||   / \  ||
+            ||   ||   ||   ||   ||   ||   ||[0m
+[1m          TWO PRISONERS. TWO CHOICES. ONE DILEMMA.[0m
+
+
+[96m+--------------------------------------------------------------------------+[0m
+[96m|                              [ EXERCISE 4 ]                              |[0m
+[96m+--------------------------------------------------------------------------+[0m
+[96m|[0m Rounds per match: 5 | Seed: 42                                           [96m|[0m
+[96m|[0m Choose independently. Scores are revealed after both decisions.          [96m|[0m
+[96m+--------------------------------------------------------------------------+[0m
+[96m
+[ THE DEAL ][0m
+TP1 payoff matrix: (A points, B points); higher is better.
+C = cooperate / stay silent; D = defect / betray.
+[2m+-------+--------+--------+[0m
+[96m| A / B | B: C   | B: D   |[0m
+[2m+-------+--------+--------+[0m
+| A: C  | (3, 3) | (0, 5) |
+| A: D  | (5, 0) | (1, 1) |
+[2m+-------+--------+--------+[0m
+
+[92m   [ C ] COOPERATE[0m       [91m[ D ] DEFECT[0m
+       Stay silent                 Betray partner
+[95m
+[CPU] Computer A: Always cooperate[0m
+[95m[CPU] Computer B: Random[0m
+[96m
+--- [ Round 1 / DECISIONS REVEALED ] ---[0m
+  PLAYER A  [92m[C] COOPERATE[0m
+  PLAYER B  [92m[C] COOPERATE[0m
+[1mRound 1: A=C, B=C -> points (3, 3)[0m
+[92m[++] MUTUAL COOPERATION - Both kept the pact. +3 each.[0m
+[96m
+--- [ Round 2 / DECISIONS REVEALED ] ---[0m
+  PLAYER A  [92m[C] COOPERATE[0m
+  PLAYER B  [92m[C] COOPERATE[0m
+[1mRound 2: A=C, B=C -> points (3, 3)[0m
+[92m[++] MUTUAL COOPERATION - Both kept the pact. +3 each.[0m
+[96m
+--- [ Round 3 / DECISIONS REVEALED ] ---[0m
+  PLAYER A  [92m[C] COOPERATE[0m
+  PLAYER B  [91m[D] DEFECT[0m
+[1mRound 3: A=C, B=D -> points (0, 5)[0m
+[91m[X] BETRAYAL - Player B takes +5; the other gets 0.[0m
+[96m
+--- [ Round 4 / DECISIONS REVEALED ] ---[0m
+  PLAYER A  [92m[C] COOPERATE[0m
+  PLAYER B  [91m[D] DEFECT[0m
+[1mRound 4: A=C, B=D -> points (0, 5)[0m
+[91m[X] BETRAYAL - Player B takes +5; the other gets 0.[0m
+[96m
+--- [ Round 5 / DECISIONS REVEALED ] ---[0m
+  PLAYER A  [92m[C] COOPERATE[0m
+  PLAYER B  [91m[D] DEFECT[0m
+[1mRound 5: A=C, B=D -> points (0, 5)[0m
+[91m[X] BETRAYAL - Player B takes +5; the other gets 0.[0m
+
+[96m+--------------------------------------------------------------------------+[0m
+[96m|                           [ MATCH SCOREBOARD ]                           |[0m
+[96m+--------------------------------------------------------------------------+[0m
+Player A: Computer A | Strategy: Always cooperate
+Player B: Computer B | Strategy: Random
+[2m+-------+---+---+----------+----------+---------+---------+[0m
+[96m| Round | A | B | A points | B points | A total | B total |[0m
+[2m+-------+---+---+----------+----------+---------+---------+[0m
+| 1     | [92mC[0m | [92mC[0m | 3        | 3        | 3       | 3       |
+| 2     | [92mC[0m | [92mC[0m | 3        | 3        | 6       | 6       |
+| 3     | [92mC[0m | [91mD[0m | 0        | 5        | 6       | 11      |
+| 4     | [92mC[0m | [91mD[0m | 0        | 5        | 6       | 16      |
+| 5     | [92mC[0m | [91mD[0m | 0        | 5        | 6       | 21      |
+[2m+-------+---+---+----------+----------+---------+---------+[0m
+Final score: Computer A = 6; Computer B = 21
+  Computer A   [96m[#####...............] 6/25 points[0m
+  Computer B   [96m[#################...] 21/25 points[0m
+[92m[W] Match winner by total points: Computer B[0m
+
+[96m+--------------------------------------------------------------------------+[0m
+[96m|                           [ RUN OBSERVATIONS ]                           |[0m
+[96m+--------------------------------------------------------------------------+[0m
+Observed summary (this run only):
+Matches: 1; total played rounds: 5
+Cooperative decisions: 7/10 (70.0%)
+Mutual cooperation: 2; mutual defection: 0
+Combined points: 27
+These simulated results depend on opponents, rounds, random seed and bracket.
+They do not prove that the winner's strategy is universally best.

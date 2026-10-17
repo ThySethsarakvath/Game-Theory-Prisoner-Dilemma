@@ -1,0 +1,95 @@
+
++--------------------------------------------------------------------------+
+|               P R I S O N E R ' S   D I L E M M A  /  TP1                |
++--------------------------------------------------------------------------+
+
+            ||   ||   ||   ||   ||   ||   ||
+            ||  (o)   ||       ||   (o)  ||
+            ||  /|\   ||  VS   ||   /|\  ||
+            ||  / \   ||       ||   / \  ||
+            ||   ||   ||   ||   ||   ||   ||
+          TWO PRISONERS. TWO CHOICES. ONE DILEMMA.
+
+
++--------------------------------------------------------------------------+
+|                              [ EXERCISE 4 ]                              |
++--------------------------------------------------------------------------+
+| Rounds per match: 5 | Seed: 42                                           |
+| Choose independently. Scores are revealed after both decisions.          |
++--------------------------------------------------------------------------+
+
+[ THE DEAL ]
+TP1 payoff matrix: (A points, B points); higher is better.
+C = cooperate / stay silent; D = defect / betray.
++-------+--------+--------+
+| A / B | B: C   | B: D   |
++-------+--------+--------+
+| A: C  | (3, 3) | (0, 5) |
+| A: D  | (5, 0) | (1, 1) |
++-------+--------+--------+
+
+   [ C ] COOPERATE       [ D ] DEFECT
+       Stay silent                 Betray partner
+
+[CPU] Computer A: Always cooperate
+[CPU] Computer B: Random
+
+--- [ Round 1 / DECISIONS REVEALED ] ---
+  PLAYER A  [C] COOPERATE
+  PLAYER B  [C] COOPERATE
+Round 1: A=C, B=C -> points (3, 3)
+[++] MUTUAL COOPERATION - Both kept the pact. +3 each.
+
+--- [ Round 2 / DECISIONS REVEALED ] ---
+  PLAYER A  [C] COOPERATE
+  PLAYER B  [C] COOPERATE
+Round 2: A=C, B=C -> points (3, 3)
+[++] MUTUAL COOPERATION - Both kept the pact. +3 each.
+
+--- [ Round 3 / DECISIONS REVEALED ] ---
+  PLAYER A  [C] COOPERATE
+  PLAYER B  [D] DEFECT
+Round 3: A=C, B=D -> points (0, 5)
+[X] BETRAYAL - Player B takes +5; the other gets 0.
+
+--- [ Round 4 / DECISIONS REVEALED ] ---
+  PLAYER A  [C] COOPERATE
+  PLAYER B  [D] DEFECT
+Round 4: A=C, B=D -> points (0, 5)
+[X] BETRAYAL - Player B takes +5; the other gets 0.
+
+--- [ Round 5 / DECISIONS REVEALED ] ---
+  PLAYER A  [C] COOPERATE
+  PLAYER B  [D] DEFECT
+Round 5: A=C, B=D -> points (0, 5)
+[X] BETRAYAL - Player B takes +5; the other gets 0.
+
++--------------------------------------------------------------------------+
+|                           [ MATCH SCOREBOARD ]                           |
++--------------------------------------------------------------------------+
+Player A: Computer A | Strategy: Always cooperate
+Player B: Computer B | Strategy: Random
++-------+---+---+----------+----------+---------+---------+
+| Round | A | B | A points | B points | A total | B total |
++-------+---+---+----------+----------+---------+---------+
+| 1     | C | C | 3        | 3        | 3       | 3       |
+| 2     | C | C | 3        | 3        | 6       | 6       |
+| 3     | C | D | 0        | 5        | 6       | 11      |
+| 4     | C | D | 0        | 5        | 6       | 16      |
+| 5     | C | D | 0        | 5        | 6       | 21      |
++-------+---+---+----------+----------+---------+---------+
+Final score: Computer A = 6; Computer B = 21
+  Computer A   [#####...............] 6/25 points
+  Computer B   [#################...] 21/25 points
+[W] Match winner by total points: Computer B
+
++--------------------------------------------------------------------------+
+|                           [ RUN OBSERVATIONS ]                           |
++--------------------------------------------------------------------------+
+Observed summary (this run only):
+Matches: 1; total played rounds: 5
+Cooperative decisions: 7/10 (70.0%)
+Mutual cooperation: 2; mutual defection: 0
+Combined points: 27
+These simulated results depend on opponents, rounds, random seed and bracket.
+They do not prove that the winner's strategy is universally best.

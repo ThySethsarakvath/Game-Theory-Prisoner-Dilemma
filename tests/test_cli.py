@@ -1,6 +1,7 @@
 """Exercise-level checks through the actual entry point, with scripted input."""
 
 from pathlib import Path
+import re
 import subprocess
 import sys
 import unittest
@@ -44,6 +45,17 @@ class CliTests(unittest.TestCase):
         self.assertEqual(first.returncode, 0, first.stderr)
         self.assertEqual(first.stdout, second.stdout)
         self.assertIn("Observed summary", first.stdout)
+        self.assertNotIn("\x1b", first.stdout)
+
+    def test_color_changes_neither_visible_layout_nor_scores(self):
+        args = ("--exercise", "4", "--rounds", "3", "--seed", "42")
+        colored = run_cli(*args, "--color", "always")
+        plain = run_cli(*args, "--no-color")
+        self.assertEqual(colored.returncode, 0, colored.stderr)
+        self.assertEqual(plain.returncode, 0, plain.stderr)
+        self.assertIn("\x1b[", colored.stdout)
+        self.assertNotIn("\x1b", plain.stdout)
+        self.assertEqual(re.sub(r"\x1b\[[0-9;]*m", "", colored.stdout), plain.stdout)
 
     def test_exercise_5_finishes_six_player_tournament(self):
         result = run_cli("--exercise", "5", "--players", "6", "--rounds", "3", "--seed", "42")

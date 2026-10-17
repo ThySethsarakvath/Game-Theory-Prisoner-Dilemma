@@ -27,6 +27,34 @@ supporting hidden input for human play; unsupported hidden input ends play with
 an explanation. Redirected input is available for scripted demonstrations/tests,
 where the caller is responsible for supplying the choices independently.
 
+## Console appearance
+
+The game uses ASCII prison artwork, framed menus and scoreboards, round reveal
+messages, point bars and a tournament trophy. Green labels identify cooperation,
+red labels identify defection, cyan identifies prompts/tables, and yellow marks
+draws, tie-breaks and the champion. All meanings also appear as text, so color
+is optional. Score bars show points out of the per-player ceiling `5 * rounds`;
+they are not win probabilities.
+
+Human turns explain that typing is hidden and confirm **Decision locked** without
+revealing which choice was entered. Press Enter after C or D. Exercise 4 reveals
+each round as it runs; the tournament prints each complete match and advancement.
+
+Colors are detected automatically for interactive terminals. Windows consoles
+are asked to enable ANSI processing; unsupported consoles and redirected output
+use plain text. No external terminal package is required.
+
+```powershell
+python main.py --color always   # Force ANSI colors if auto detection misses support
+python main.py --no-color       # Plain ASCII presentation
+```
+
+`--color never` also disables colors. In auto mode, the `NO_COLOR` environment
+variable (even empty) and `TERM=dumb` disable ANSI output. There are no artificial
+delays, screen clearing or extra keypresses between rounds, so scripted input
+and saved results keep working. An explicit `--color always` overrides auto
+detection and may show raw ANSI codes on unsupported displays.
+
 | Exercise | What it does | Example command |
 | --- | --- | --- |
 | 1 | Two humans, exactly one round; decisions and final scores. | `python main.py --exercise 1` |
@@ -120,6 +148,7 @@ and prints every round; use small round/player counts for readability.
 | [engine.py](prisoners_dilemma/engine.py) | Match loop; history isolation and round feedback. |
 | [tournament.py](prisoners_dilemma/tournament.py) | Pairing, advancement, ties, byes and champion. |
 | [display.py](prisoners_dilemma/display.py) | Matrix, decision/score tables and summaries. |
+| [terminal.py](prisoners_dilemma/terminal.py) | ANSI color detection, Windows console support, ASCII panels and color-aware padding. |
 | [tests/test_game.py](tests/test_game.py) | Scoring, strategies, match behavior, privacy boundary, tournaments and observations. |
 | [tests/test_cli.py](tests/test_cli.py) | All five exercises through the actual console entry point. |
 

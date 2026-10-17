@@ -1,0 +1,84 @@
+
++--------------------------------------------------------------------------+
+|               P R I S O N E R ' S   D I L E M M A  /  TP1                |
++--------------------------------------------------------------------------+
+
+            ||   ||   ||   ||   ||   ||   ||
+            ||  (o)   ||       ||   (o)  ||
+            ||  /|\   ||  VS   ||   /|\  ||
+            ||  / \   ||       ||   / \  ||
+            ||   ||   ||   ||   ||   ||   ||
+          TWO PRISONERS. TWO CHOICES. ONE DILEMMA.
+
+
++--------------------------------------------------------------------------+
+|                              [ EXERCISE 3 ]                              |
++--------------------------------------------------------------------------+
+| Rounds per match: 3 | Seed: 42                                           |
+| Choose independently. Scores are revealed after both decisions.          |
++--------------------------------------------------------------------------+
+
+[ THE DEAL ]
+TP1 payoff matrix: (A points, B points); higher is better.
+C = cooperate / stay silent; D = defect / betray.
++-------+--------+--------+
+| A / B | B: C   | B: D   |
++-------+--------+--------+
+| A: C  | (3, 3) | (0, 5) |
+| A: D  | (5, 0) | (1, 1) |
++-------+--------+--------+
+
+   [ C ] COOPERATE       [ D ] DEFECT
+       Stay silent                 Betray partner
+
+[CPU] Computer strategy: Tit-for-tat
+
+[ YOUR TURN: Human A / Round 1 ]
+[C] Cooperate / stay silent    [D] Defect / betray
+Scripted input: enter C or D, then press ENTER.
+[>] Human A, choose C or D: [OK] Decision locked. Waiting for the round reveal.
+
+--- [ Round 1 / DECISIONS REVEALED ] ---
+  PLAYER A  [D] DEFECT
+  PLAYER B  [C] COOPERATE
+Round 1: A=D, B=C -> points (5, 0)
+[X] BETRAYAL - Player A takes +5; the other gets 0.
+
+[ YOUR TURN: Human A / Round 2 ]
+[C] Cooperate / stay silent    [D] Defect / betray
+Scripted input: enter C or D, then press ENTER.
+[>] Human A, choose C or D: [OK] Decision locked. Waiting for the round reveal.
+
+--- [ Round 2 / DECISIONS REVEALED ] ---
+  PLAYER A  [C] COOPERATE
+  PLAYER B  [D] DEFECT
+Round 2: A=C, B=D -> points (0, 5)
+[X] BETRAYAL - Player B takes +5; the other gets 0.
+
+[ YOUR TURN: Human A / Round 3 ]
+[C] Cooperate / stay silent    [D] Defect / betray
+Scripted input: enter C or D, then press ENTER.
+[>] Human A, choose C or D: [OK] Decision locked. Waiting for the round reveal.
+
+--- [ Round 3 / DECISIONS REVEALED ] ---
+  PLAYER A  [D] DEFECT
+  PLAYER B  [C] COOPERATE
+Round 3: A=D, B=C -> points (5, 0)
+[X] BETRAYAL - Player A takes +5; the other gets 0.
+
++--------------------------------------------------------------------------+
+|                           [ MATCH SCOREBOARD ]                           |
++--------------------------------------------------------------------------+
+Player A: Human A | Strategy: Human decisions
+Player B: Computer B | Strategy: Tit-for-tat
++-------+---+---+----------+----------+---------+---------+
+| Round | A | B | A points | B points | A total | B total |
++-------+---+---+----------+----------+---------+---------+
+| 1     | D | C | 5        | 0        | 5       | 0       |
+| 2     | C | D | 0        | 5        | 5       | 5       |
+| 3     | D | C | 5        | 0        | 10      | 5       |
++-------+---+---+----------+----------+---------+---------+
+Final score: Human A = 10; Computer B = 5
+  Human A      [#############.......] 10/15 points
+  Computer B   [#######.............] 5/15 points
+[W] Match winner by total points: Human A

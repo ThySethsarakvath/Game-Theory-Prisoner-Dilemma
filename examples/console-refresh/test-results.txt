@@ -1,0 +1,43 @@
+test_color_changes_neither_visible_layout_nor_scores (test_cli.CliTests.test_color_changes_neither_visible_layout_nor_scores) ... ok
+test_eof_cancels_without_fabricating_result (test_cli.CliTests.test_eof_cancels_without_fabricating_result) ... ok
+test_exercise_1_scores_and_table (test_cli.CliTests.test_exercise_1_scores_and_table) ... ok
+test_exercise_2_cumulative_totals (test_cli.CliTests.test_exercise_2_cumulative_totals) ... ok
+test_exercise_3_all_four_strategies (test_cli.CliTests.test_exercise_3_all_four_strategies) ... ok
+test_exercise_4_is_reproducible (test_cli.CliTests.test_exercise_4_is_reproducible) ... ok
+test_exercise_5_finishes_six_player_tournament (test_cli.CliTests.test_exercise_5_finishes_six_player_tournament) ... ok
+test_exit_without_starting_game (test_cli.CliTests.test_exit_without_starting_game) ... ok
+test_invalid_options_fail_cleanly (test_cli.CliTests.test_invalid_options_fail_cleanly) ... ok
+test_menu_and_round_validation_recover_from_bad_input (test_cli.CliTests.test_menu_and_round_validation_recover_from_bad_input) ... ok
+test_tournament_prompt_recovers_from_odd_count (test_cli.CliTests.test_tournament_prompt_recovers_from_odd_count) ... ok
+test_bad_action_is_retried (test_game.HumanInputTests.test_bad_action_is_retried) ... ok
+test_interactive_human_choice_uses_hidden_input (test_game.HumanInputTests.test_interactive_human_choice_uses_hidden_input) ... ok
+test_pre_reveal_feedback_does_not_disclose_the_action (test_game.HumanInputTests.test_pre_reveal_feedback_does_not_disclose_the_action) ... ok
+test_unsupported_hidden_input_fails_without_visible_retry (test_game.HumanInputTests.test_unsupported_hidden_input_fails_without_visible_retry) ... ok
+test_defection_exploits_cooperation (test_game.MatchTests.test_defection_exploits_cooperation) ... ok
+test_invalid_round_counts_fail (test_game.MatchTests.test_invalid_round_counts_fail) ... ok
+test_mutual_cooperation_totals (test_game.MatchTests.test_mutual_cooperation_totals) ... ok
+test_no_player_receives_current_opponent_action (test_game.MatchTests.test_no_player_receives_current_opponent_action) ... ok
+test_reused_tit_for_tat_starts_new_match_with_empty_history (test_game.MatchTests.test_reused_tit_for_tat_starts_new_match_with_empty_history) ... ok
+test_tit_for_tat_responds_from_second_round (test_game.MatchTests.test_tit_for_tat_responds_from_second_round) ... ok
+test_summary_uses_observed_actions_and_points (test_game.ObservationTests.test_summary_uses_observed_actions_and_points) ... ok
+test_all_four_source_cells_and_coordinate_order (test_game.PayoffTests.test_all_four_source_cells_and_coordinate_order) ... ok
+test_invalid_actions_cannot_be_scored (test_game.PayoffTests.test_invalid_actions_cannot_be_scored) ... ok
+test_parse_accepts_case_and_whitespace (test_game.PayoffTests.test_parse_accepts_case_and_whitespace) ... ok
+test_parse_rejects_other_decisions (test_game.PayoffTests.test_parse_rejects_other_decisions) ... ok
+test_constant_strategies_ignore_history (test_game.StrategyTests.test_constant_strategies_ignore_history) ... ok
+test_random_actions_are_valid_and_reproducible (test_game.StrategyTests.test_random_actions_are_valid_and_reproducible) ... ok
+test_random_strategy_selection_is_reproducible_and_fixed (test_game.StrategyTests.test_random_strategy_selection_is_reproducible_and_fixed) ... ok
+test_tit_for_tat_starts_cooperating_and_copies_last_action (test_game.StrategyTests.test_tit_for_tat_starts_cooperating_and_copies_last_action) ... ok
+test_unsupported_strategy_fails (test_game.StrategyTests.test_unsupported_strategy_fails) ... ok
+test_duplicate_or_blank_names_fail (test_game.TournamentTests.test_duplicate_or_blank_names_fail) ... ok
+test_even_fields_finish_and_only_winners_advance (test_game.TournamentTests.test_even_fields_finish_and_only_winners_advance) ... ok
+test_higher_score_advances_without_tiebreak (test_game.TournamentTests.test_higher_score_advances_without_tiebreak) ... ok
+test_invalid_fields_fail (test_game.TournamentTests.test_invalid_fields_fail) ... ok
+test_invalid_match_rounds_fail (test_game.TournamentTests.test_invalid_match_rounds_fail) ... ok
+test_seed_reproduces_whole_tournament (test_game.TournamentTests.test_seed_reproduces_whole_tournament) ... ok
+test_six_entrants_receive_one_later_bye (test_game.TournamentTests.test_six_entrants_receive_one_later_bye) ... ok
+
+----------------------------------------------------------------------
+Ran 38 tests in 2.180s
+
+OK

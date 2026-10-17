@@ -1,0 +1,15 @@
+{
+  "main.py": "bf939151d2b3c3223916b9775804ed85b9119065226869e7440be5a5ee0c054d",
+  "prisoners_dilemma\\__init__.py": "fa1074063e03500d8bdb1c49805fbf3d71ec9cb48aa5dd81aeb763c4e751d806",
+  "prisoners_dilemma\\cli.py": "078f133d28e9f364e03c8f33233c3bf329fc36642264f05dcd110a4fa90a5282",
+  "prisoners_dilemma\\display.py": "76df9ab4d74dba486b7af5ab017a7a65a622759fcfa7827519a55ad73cf398dc",
+  "prisoners_dilemma\\engine.py": "8b9108daf87fded983ea3ad3f5211236c82cbe27ff96f5899901714836ff2706",
+  "prisoners_dilemma\\exercises.py": "69510099fdf1b9a377205cf984ec5921567eed53fead0a2707b3e06ac38b1a1e",
+  "prisoners_dilemma\\models.py": "ceb6d1782997aabff1dc03bf9984ef04c21cd7c836c82c2072ab562c6ea19540",
+  "prisoners_dilemma\\players.py": "f9b11bad8f77b6ff2d0a56659d4bb7fc6c9e05b0349fd28cc1edcabf296eb708",
+  "prisoners_dilemma\\strategies.py": "a998ca2dd14b89c13251fe185f5fd355f7cca75c5e6cda17dcd469109bad4a42",
+  "prisoners_dilemma\\terminal.py": "8eabb0edbe2338634f2b4518f136d7731a6ef8e5b8cf3e115be47c8dcbffcea6",
+  "prisoners_dilemma\\tournament.py": "a01d1702b5d285fedb6b312a0a7f3a4ce04a66a6b59f83128f186f092a66da36",
+  "tests\\test_cli.py": "76a2684ccf7ea8199b73602a7d0ce8773550030556a05c71e80f311566b5f06d",
+  "tests\\test_game.py": "a742fe59c19cd30a8c7d9a9ee660541538030a4753a43d5332c4af4f0a972150"
+}

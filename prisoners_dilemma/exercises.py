@@ -10,6 +10,7 @@ from .models import MatchResult
 from .players import ComputerPlayer, HumanPlayer, random_computer
 from .strategies import Strategy
 from .tournament import TournamentResult, play_tournament
+from .terminal import Color, paint
 
 
 def exercise_1() -> MatchResult:
@@ -26,14 +27,18 @@ def exercise_2(rounds: int) -> MatchResult:
 
 def exercise_3(rounds: int, strategy: Strategy, rng: Random) -> MatchResult:
     computer = ComputerPlayer("Computer B", strategy, Random(rng.getrandbits(64)))
-    print(f"Computer strategy: {strategy.value}")
+    print(paint(f"\n[CPU] Computer strategy: {strategy.value}", Color.MAGENTA))
     result = play_match(HumanPlayer("Human A"), computer, rounds, show_round)
     show_match(result)
     return result
 
 
 def exercise_4(rounds: int, rng: Random) -> MatchResult:
-    result = play_match(random_computer("Computer A", rng), random_computer("Computer B", rng), rounds)
+    player_a = random_computer("Computer A", rng)
+    player_b = random_computer("Computer B", rng)
+    print(paint(f"\n[CPU] Computer A: {player_a.strategy_name}", Color.MAGENTA))
+    print(paint(f"[CPU] Computer B: {player_b.strategy_name}", Color.MAGENTA))
+    result = play_match(player_a, player_b, rounds, show_round)
     show_match(result)
     show_observations([result])
     return result

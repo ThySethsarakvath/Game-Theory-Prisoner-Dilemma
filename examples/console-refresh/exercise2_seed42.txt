@@ -1,0 +1,97 @@
+
++--------------------------------------------------------------------------+
+|               P R I S O N E R ' S   D I L E M M A  /  TP1                |
++--------------------------------------------------------------------------+
+
+            ||   ||   ||   ||   ||   ||   ||
+            ||  (o)   ||       ||   (o)  ||
+            ||  /|\   ||  VS   ||   /|\  ||
+            ||  / \   ||       ||   / \  ||
+            ||   ||   ||   ||   ||   ||   ||
+          TWO PRISONERS. TWO CHOICES. ONE DILEMMA.
+
+
++--------------------------------------------------------------------------+
+|                              [ EXERCISE 2 ]                              |
++--------------------------------------------------------------------------+
+| Rounds per match: 3 | Seed: 42                                           |
+| Choose independently. Scores are revealed after both decisions.          |
++--------------------------------------------------------------------------+
+
+[ THE DEAL ]
+TP1 payoff matrix: (A points, B points); higher is better.
+C = cooperate / stay silent; D = defect / betray.
++-------+--------+--------+
+| A / B | B: C   | B: D   |
++-------+--------+--------+
+| A: C  | (3, 3) | (0, 5) |
+| A: D  | (5, 0) | (1, 1) |
++-------+--------+--------+
+
+   [ C ] COOPERATE       [ D ] DEFECT
+       Stay silent                 Betray partner
+
+[ YOUR TURN: Human A / Round 1 ]
+[C] Cooperate / stay silent    [D] Defect / betray
+Scripted input: enter C or D, then press ENTER.
+[>] Human A, choose C or D: [OK] Decision locked. Waiting for the round reveal.
+
+[ YOUR TURN: Human B / Round 1 ]
+[C] Cooperate / stay silent    [D] Defect / betray
+Scripted input: enter C or D, then press ENTER.
+[>] Human B, choose C or D: [OK] Decision locked. Waiting for the round reveal.
+
+--- [ Round 1 / DECISIONS REVEALED ] ---
+  PLAYER A  [C] COOPERATE
+  PLAYER B  [C] COOPERATE
+Round 1: A=C, B=C -> points (3, 3)
+[++] MUTUAL COOPERATION - Both kept the pact. +3 each.
+
+[ YOUR TURN: Human A / Round 2 ]
+[C] Cooperate / stay silent    [D] Defect / betray
+Scripted input: enter C or D, then press ENTER.
+[>] Human A, choose C or D: [OK] Decision locked. Waiting for the round reveal.
+
+[ YOUR TURN: Human B / Round 2 ]
+[C] Cooperate / stay silent    [D] Defect / betray
+Scripted input: enter C or D, then press ENTER.
+[>] Human B, choose C or D: [OK] Decision locked. Waiting for the round reveal.
+
+--- [ Round 2 / DECISIONS REVEALED ] ---
+  PLAYER A  [C] COOPERATE
+  PLAYER B  [D] DEFECT
+Round 2: A=C, B=D -> points (0, 5)
+[X] BETRAYAL - Player B takes +5; the other gets 0.
+
+[ YOUR TURN: Human A / Round 3 ]
+[C] Cooperate / stay silent    [D] Defect / betray
+Scripted input: enter C or D, then press ENTER.
+[>] Human A, choose C or D: [OK] Decision locked. Waiting for the round reveal.
+
+[ YOUR TURN: Human B / Round 3 ]
+[C] Cooperate / stay silent    [D] Defect / betray
+Scripted input: enter C or D, then press ENTER.
+[>] Human B, choose C or D: [OK] Decision locked. Waiting for the round reveal.
+
+--- [ Round 3 / DECISIONS REVEALED ] ---
+  PLAYER A  [D] DEFECT
+  PLAYER B  [D] DEFECT
+Round 3: A=D, B=D -> points (1, 1)
+[!!] MUTUAL DEFECTION - Both betrayed. +1 each.
+
++--------------------------------------------------------------------------+
+|                           [ MATCH SCOREBOARD ]                           |
++--------------------------------------------------------------------------+
+Player A: Human A | Strategy: Human decisions
+Player B: Human B | Strategy: Human decisions
++-------+---+---+----------+----------+---------+---------+
+| Round | A | B | A points | B points | A total | B total |
++-------+---+---+----------+----------+---------+---------+
+| 1     | C | C | 3        | 3        | 3       | 3       |
+| 2     | C | D | 0        | 5        | 3       | 8       |
+| 3     | D | D | 1        | 1        | 4       | 9       |
++-------+---+---+----------+----------+---------+---------+
+Final score: Human A = 4; Human B = 9
+  Human A      [#####...............] 4/15 points
+  Human B      [############........] 9/15 points
+[W] Match winner by total points: Human B

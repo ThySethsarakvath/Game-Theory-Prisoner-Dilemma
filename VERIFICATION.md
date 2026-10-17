@@ -2,7 +2,43 @@
 
 Verification date: **2026-10-17** (Asia/Bangkok).
 
-## Reproducible run configuration
+## Current console refresh verification
+
+At the user's request, the console now has ASCII artwork/panels, optional ANSI
+colors, round reveals, point bars, a tournament trophy and clearer hidden-input
+instructions/confirmation. The mathematical model, strategies, bracket rules
+and input sequence are unchanged. Existing examples below are retained as the
+initial implementation record; refreshed captures are stored separately.
+
+**Verified computational result:** **38 tests passed** on Python 3.12.14 using
+the same `python -B -m unittest discover -s tests -v` command. The
+[current test output](examples/console-refresh/test-results.txt) includes the
+original checks plus color/plain layout equivalence and action-independent
+feedback before revealing a round. Redirected output contains no ANSI escapes.
+
+All five configurations in the table below were rerun twice. Each exited 0,
+reproduced identical output, and retained its original scores/champion:
+[exercise 1](examples/console-refresh/exercise1_seed42.txt),
+[exercise 2](examples/console-refresh/exercise2_seed42.txt),
+[exercise 3](examples/console-refresh/exercise3_seed42.txt),
+[exercise 4](examples/console-refresh/exercise4_seed42.txt), and
+[exercise 5](examples/console-refresh/exercise5_seed42.txt).
+The [current code manifest](examples/console-refresh/code-sha256.json) identifies
+all 13 Python files. The [forced-color capture](examples/console-refresh/exercise4_color.ansi.txt)
+has identical text and table alignment after stripping ANSI color codes.
+
+Physical terminal colors and input echo remain environment-dependent; they have
+not been manually verified on the user's terminal. Console output was also
+rendered to an image for visual review; that is a rendering of captured text,
+not a screenshot proving physical terminal behavior.
+
+Final scope checks passed: all 3 original PDFs, root instructions, Git metadata,
+the scoring model, engine, strategy rules and tournament logic retain their
+pre-refresh hashes. No existing file was deleted. Changes are limited to the
+project and its assignment/troubleshooting records. All 186 relative Markdown
+links resolve, and all 13 Python files parse and match the current manifest.
+
+## Initial implementation - reproducible run configuration
 
 All commands below run from this project directory, with Python 3.12.14 on
 Windows and the standard library only. The interpreter used for verification is:
@@ -31,7 +67,7 @@ cooperation frequency, mutual cooperation/defection counts and combined points.
 | Exercise 4 | `--exercise 4 --rounds 5 --seed 42` | None |
 | Exercise 5 | `--exercise 5 --players 6 --rounds 3 --seed 42` | None |
 
-## Executed results
+## Initial implementation - executed results
 
 **Verified computational result:** all **36 tests passed**, using:
 

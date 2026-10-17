@@ -1,0 +1,203 @@
+
++--------------------------------------------------------------------------+
+|               P R I S O N E R ' S   D I L E M M A  /  TP1                |
++--------------------------------------------------------------------------+
+
+            ||   ||   ||   ||   ||   ||   ||
+            ||  (o)   ||       ||   (o)  ||
+            ||  /|\   ||  VS   ||   /|\  ||
+            ||  / \   ||       ||   / \  ||
+            ||   ||   ||   ||   ||   ||   ||
+          TWO PRISONERS. TWO CHOICES. ONE DILEMMA.
+
+
++--------------------------------------------------------------------------+
+|                              [ EXERCISE 5 ]                              |
++--------------------------------------------------------------------------+
+| Rounds per match: 3 | Seed: 42                                           |
+| Choose independently. Scores are revealed after both decisions.          |
++--------------------------------------------------------------------------+
+
+[ THE DEAL ]
+TP1 payoff matrix: (A points, B points); higher is better.
+C = cooperate / stay silent; D = defect / betray.
++-------+--------+--------+
+| A / B | B: C   | B: D   |
++-------+--------+--------+
+| A: C  | (3, 3) | (0, 5) |
+| A: D  | (5, 0) | (1, 1) |
++-------+--------+--------+
+
+   [ C ] COOPERATE       [ D ] DEFECT
+       Stay silent                 Betray partner
+
+Tournament rules: total points decide each match; tied scores use a random draw.
+Pair in entrant order. Later odd stages give the last survivor a bye.
+Each match starts fresh history; points reset for each match.
+
++--------------------------------------------------------------------------+
+|                           [ TOURNAMENT ARENA ]                           |
++--------------------------------------------------------------------------+
+| Win your match. Advance through the bracket. Claim the trophy.           |
++--------------------------------------------------------------------------+
+Tournament entrants (strategies stay fixed):
++------------+------------------+
+| Player     | Strategy         |
++------------+------------------+
+| Computer 1 | Always cooperate |
+| Computer 2 | Random           |
+| Computer 3 | Always defect    |
+| Computer 4 | Always cooperate |
+| Computer 5 | Always cooperate |
+| Computer 6 | Always defect    |
++------------+------------------+
+
++--------------------------------------------------------------------------+
+|                        === Tournament stage 1 ===                        |
++--------------------------------------------------------------------------+
+
+[ MATCH 1 ] Computer 1 vs Computer 2
+
++--------------------------------------------------------------------------+
+|                           [ MATCH SCOREBOARD ]                           |
++--------------------------------------------------------------------------+
+Player A: Computer 1 | Strategy: Always cooperate
+Player B: Computer 2 | Strategy: Random
++-------+---+---+----------+----------+---------+---------+
+| Round | A | B | A points | B points | A total | B total |
++-------+---+---+----------+----------+---------+---------+
+| 1     | C | C | 3        | 3        | 3       | 3       |
+| 2     | C | C | 3        | 3        | 6       | 6       |
+| 3     | C | D | 0        | 5        | 6       | 11      |
++-------+---+---+----------+----------+---------+---------+
+Final score: Computer 1 = 6; Computer 2 = 11
+  Computer 1   [########............] 6/15 points
+  Computer 2   [###############.....] 11/15 points
+[W] Match winner by total points: Computer 2
+[>] Advancing: Computer 2
+
+[ MATCH 2 ] Computer 3 vs Computer 4
+
++--------------------------------------------------------------------------+
+|                           [ MATCH SCOREBOARD ]                           |
++--------------------------------------------------------------------------+
+Player A: Computer 3 | Strategy: Always defect
+Player B: Computer 4 | Strategy: Always cooperate
++-------+---+---+----------+----------+---------+---------+
+| Round | A | B | A points | B points | A total | B total |
++-------+---+---+----------+----------+---------+---------+
+| 1     | D | C | 5        | 0        | 5       | 0       |
+| 2     | D | C | 5        | 0        | 10      | 0       |
+| 3     | D | C | 5        | 0        | 15      | 0       |
++-------+---+---+----------+----------+---------+---------+
+Final score: Computer 3 = 15; Computer 4 = 0
+  Computer 3   [####################] 15/15 points
+  Computer 4   [....................] 0/15 points
+[W] Match winner by total points: Computer 3
+[>] Advancing: Computer 3
+
+[ MATCH 3 ] Computer 5 vs Computer 6
+
++--------------------------------------------------------------------------+
+|                           [ MATCH SCOREBOARD ]                           |
++--------------------------------------------------------------------------+
+Player A: Computer 5 | Strategy: Always cooperate
+Player B: Computer 6 | Strategy: Always defect
++-------+---+---+----------+----------+---------+---------+
+| Round | A | B | A points | B points | A total | B total |
++-------+---+---+----------+----------+---------+---------+
+| 1     | C | D | 0        | 5        | 0       | 5       |
+| 2     | C | D | 0        | 5        | 0       | 10      |
+| 3     | C | D | 0        | 5        | 0       | 15      |
++-------+---+---+----------+----------+---------+---------+
+Final score: Computer 5 = 0; Computer 6 = 15
+  Computer 5   [....................] 0/15 points
+  Computer 6   [####################] 15/15 points
+[W] Match winner by total points: Computer 6
+[>] Advancing: Computer 6
+
++--------------------------------------------------------------------------+
+|                        === Tournament stage 2 ===                        |
++--------------------------------------------------------------------------+
+
+[ MATCH 1 ] Computer 2 vs Computer 3
+
++--------------------------------------------------------------------------+
+|                           [ MATCH SCOREBOARD ]                           |
++--------------------------------------------------------------------------+
+Player A: Computer 2 | Strategy: Random
+Player B: Computer 3 | Strategy: Always defect
++-------+---+---+----------+----------+---------+---------+
+| Round | A | B | A points | B points | A total | B total |
++-------+---+---+----------+----------+---------+---------+
+| 1     | D | D | 1        | 1        | 1       | 1       |
+| 2     | D | D | 1        | 1        | 2       | 2       |
+| 3     | C | D | 0        | 5        | 2       | 7       |
++-------+---+---+----------+----------+---------+---------+
+Final score: Computer 2 = 2; Computer 3 = 7
+  Computer 2   [###.................] 2/15 points
+  Computer 3   [#########...........] 7/15 points
+[W] Match winner by total points: Computer 3
+[>] Advancing: Computer 3
+[>] Bye: Computer 6 advances without playing or earning points.
+
++--------------------------------------------------------------------------+
+|                        === Tournament stage 3 ===                        |
++--------------------------------------------------------------------------+
+
+[ MATCH 1 ] Computer 3 vs Computer 6
+
++--------------------------------------------------------------------------+
+|                           [ MATCH SCOREBOARD ]                           |
++--------------------------------------------------------------------------+
+Player A: Computer 3 | Strategy: Always defect
+Player B: Computer 6 | Strategy: Always defect
++-------+---+---+----------+----------+---------+---------+
+| Round | A | B | A points | B points | A total | B total |
++-------+---+---+----------+----------+---------+---------+
+| 1     | D | D | 1        | 1        | 1       | 1       |
+| 2     | D | D | 1        | 1        | 2       | 2       |
+| 3     | D | D | 1        | 1        | 3       | 3       |
++-------+---+---+----------+----------+---------+---------+
+Final score: Computer 3 = 3; Computer 6 = 3
+  Computer 3   [####................] 3/15 points
+  Computer 6   [####................] 3/15 points
+[=] Match result: draw.
+[?] Tie-break: seeded random draw; Computer 3 advances.
+
+                       ___________
+                      '._==_==_=_.'
+                      .-\:      /-.
+                     | (|:.     |) |
+                      '-|:.     |-'
+                        \::.    /
+                         '::. .'
+                           ) (
+                         _.' '._
+                        [_______]
++--------------------------------------------------------------------------+
+|                     Tournament champion: Computer 3                      |
++--------------------------------------------------------------------------+
+
++--------------------------------------------------------------------------+
+|                           [ RUN OBSERVATIONS ]                           |
++--------------------------------------------------------------------------+
+Observed summary (this run only):
+Matches: 5; total played rounds: 15
+Cooperative decisions: 12/30 (40.0%)
+Mutual cooperation: 2; mutual defection: 5
+Combined points: 62
+These simulated results depend on opponents, rounds, random seed and bracket.
+They do not prove that the winner's strategy is universally best.
+
++--------------------------------------------------------------------------+
+|                           [ STRATEGY DEBRIEF ]                           |
++--------------------------------------------------------------------------+
+Strategy interpretation:
+One round: D earns 5 rather than 3 against C, and 1 rather than 0 against D.
+So D strictly dominates C; (D,D) is the unique one-shot Nash equilibrium.
+Both cooperating earns (3,3), better for both than mutual defection (1,1).
+Always cooperate can be exploited; always defect gives up mutual cooperation.
+Random ignores history; Tit-for-tat starts C and copies the last opposing move.
+Tit-for-tat responds to both defection and a later return to cooperation.
+Repeated play permits responses, but cooperation and convergence are not guaranteed.

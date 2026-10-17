@@ -9,6 +9,7 @@ import warnings
 
 from .models import Action
 from .strategies import Strategy, choose_action
+from .terminal import Color, notice, paint
 
 
 class Player(Protocol):
@@ -29,6 +30,12 @@ class HumanPlayer:
         return "Human decisions"
 
     def choose_action(self, opponent_history: tuple[Action, ...]) -> Action:
+        print(paint(f"\n[ YOUR TURN: {self.name} / Round {len(opponent_history) + 1} ]", Color.CYAN))
+        print(paint("[C] Cooperate / stay silent", Color.GREEN) + "    " + paint("[D] Defect / betray", Color.RED))
+        if sys.stdin.isatty():
+            print("Type C or D, then press ENTER. Nothing appears while you type.")
+        else:
+            print("Scripted input: enter C or D, then press ENTER.")
         while True:
             prompt = f"{self.name}, choose C or D (hidden): "
             if sys.stdin.isatty():
@@ -36,7 +43,7 @@ class HumanPlayer:
                 with warnings.catch_warnings():
                     warnings.simplefilter("error", GetPassWarning)
                     try:
-                        text = getpass(prompt)
+                        text = getpass(paint(prompt, Color.CYAN))
                     except GetPassWarning:
                         raise ValueError(
                             "Hidden input is unavailable. Use a terminal that "
@@ -44,11 +51,14 @@ class HumanPlayer:
                         ) from None
             else:
                 # Piped input supports reproducible demonstrations and tests.
-                text = input(f"{self.name}, choose C or D: ")
+                text = input(paint(f"[>] {self.name}, choose C or D: ", Color.CYAN))
             try:
-                return Action.parse(text)
+                action = Action.parse(text)
             except ValueError as error:
-                print(error)
+                notice(str(error), Color.RED)
+            else:
+                print(paint("[OK] Decision locked. Waiting for the round reveal.", Color.GREEN))
+                return action
 
 
 @dataclass

@@ -138,16 +138,30 @@ class HumanInputTests(unittest.TestCase):
     @patch("prisoners_dilemma.players.getpass", return_value="C")
     @patch("builtins.input")
     def test_interactive_human_choice_uses_hidden_input(self, read, hidden, isatty):
-        self.assertIs(HumanPlayer("A").choose_action(()), C)
+        with redirect_stdout(StringIO()):
+            self.assertIs(HumanPlayer("A").choose_action(()), C)
         hidden.assert_called_once()
         read.assert_not_called()
+
+    @patch("prisoners_dilemma.players.sys.stdin.isatty", return_value=True)
+    @patch("prisoners_dilemma.players.getpass")
+    def test_pre_reveal_feedback_does_not_disclose_the_action(self, hidden, isatty):
+        outputs = []
+        for action in ("C", "D"):
+            hidden.return_value = action
+            with redirect_stdout(StringIO()) as output:
+                HumanPlayer("A").choose_action(())
+            outputs.append(output.getvalue())
+        self.assertEqual(outputs[0], outputs[1])
+        self.assertIn("Nothing appears while you type", outputs[0])
+        self.assertIn("Decision locked", outputs[0])
 
     @patch("prisoners_dilemma.players.sys.stdin.isatty", return_value=True)
     @patch("prisoners_dilemma.players.getpass")
     def test_unsupported_hidden_input_fails_without_visible_retry(self, hidden, isatty):
         from getpass import GetPassWarning
         hidden.side_effect = GetPassWarning("Cannot hide input")
-        with self.assertRaisesRegex(ValueError, "Hidden input"):
+        with redirect_stdout(StringIO()), self.assertRaisesRegex(ValueError, "Hidden input"):
             HumanPlayer("A").choose_action(())
 
 
