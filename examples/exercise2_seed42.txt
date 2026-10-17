@@ -1,0 +1,22 @@
+
+Exercise 2 | Rounds per match: 3 | Seed: 42
+
+TP1 payoff matrix: (A points, B points); higher is better.
+C = cooperate / stay silent; D = defect / betray.
+A / B | B: C   | B: D  
+------+--------+-------
+A: C  | (3, 3) | (0, 5)
+A: D  | (5, 0) | (1, 1)
+Human A, choose C or D: Human B, choose C or D: Round 1: A=C, B=C -> points (3, 3)
+Human A, choose C or D: Human B, choose C or D: Round 2: A=C, B=D -> points (0, 5)
+Human A, choose C or D: Human B, choose C or D: Round 3: A=D, B=D -> points (1, 1)
+
+Player A: Human A | Strategy: Human decisions
+Player B: Human B | Strategy: Human decisions
+Round | A | B | A points | B points | A total | B total
+------+---+---+----------+----------+---------+--------
+1     | C | C | 3        | 3        | 3       | 3      
+2     | C | D | 0        | 5        | 3       | 8      
+3     | D | D | 1        | 1        | 4       | 9      
+Final score: Human A = 4; Human B = 9
+Match winner by total points: Human B

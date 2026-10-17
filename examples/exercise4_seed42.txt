@@ -1,0 +1,29 @@
+
+Exercise 4 | Rounds per match: 5 | Seed: 42
+
+TP1 payoff matrix: (A points, B points); higher is better.
+C = cooperate / stay silent; D = defect / betray.
+A / B | B: C   | B: D  
+------+--------+-------
+A: C  | (3, 3) | (0, 5)
+A: D  | (5, 0) | (1, 1)
+
+Player A: Computer A | Strategy: Always cooperate
+Player B: Computer B | Strategy: Random
+Round | A | B | A points | B points | A total | B total
+------+---+---+----------+----------+---------+--------
+1     | C | C | 3        | 3        | 3       | 3      
+2     | C | C | 3        | 3        | 6       | 6      
+3     | C | D | 0        | 5        | 6       | 11     
+4     | C | D | 0        | 5        | 6       | 16     
+5     | C | D | 0        | 5        | 6       | 21     
+Final score: Computer A = 6; Computer B = 21
+Match winner by total points: Computer B
+
+Observed summary (this run only):
+Matches: 1; total played rounds: 5
+Cooperative decisions: 7/10 (70.0%)
+Mutual cooperation: 2; mutual defection: 0
+Combined points: 27
+These simulated results depend on opponents, rounds, random seed and bracket.
+They do not prove that the winner's strategy is universally best.
